@@ -1,0 +1,25 @@
+{
+  "name": "brickseek-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "functions-framework --target=brickseekScraper",
+    "deploy": "gcloud functions deploy --region=us-central1 --runtime=nodejs12 --memory=512mb --trigger-http brickseekScraper",
+    "watch": "npm-watch start"
+  },
+  "watch": {
+    "start": "*.js"
+  },
+  "author": "Michael Fazio <mfazio23@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.8.5",
+    "axios": "^0.21.1",
+    "puppeteer": "^10.0.0"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.8.0",
+    "npm-watch": "^0.9.0"
+  }
+}
